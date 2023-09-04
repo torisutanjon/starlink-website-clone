@@ -1,0 +1,10 @@
+export { default as LandingOne } from "./Landing1";
+export { default as LandingTwo } from "./Landing2";
+export { default as LandingThree } from "./Landing3";
+export { default as LandingFour } from "./Landing4";
+export { default as LandingFive } from "./Landing5";
+export { default as LandingSix } from "./Landing6";
+export { default as LandingSeven } from "./Landing7";
+export { default as LandingEight } from "./Landing8";
+export { default as LandingNine } from "./Landing9";
+export { default as LandingTen } from "./Landing10";
