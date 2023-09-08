@@ -1,8 +1,10 @@
 const Footer = () => {
   return (
-    <footer className="relative w-full flex flex-col items-center justify-center py-4 bg-black mt-24">
-      <div className="w-full flex items-center justify-center">
-        <p className="text-[12px] text-white/40">Starlink &copy; 2023</p>
+    <footer className="relative w-full flex flex-col items-center justify-center py-4 bg-black mt-24 xl:flex-row">
+      <div className="w-full flex items-center justify-center xl:justify-start">
+        <p className="text-[12px] text-white/40 xl:ml-12">
+          Starlink &copy; 2023
+        </p>
       </div>
       <div className=" w-full flex items-center justify-center px-12">
         <p className="text-white text-[11px] text-center">
@@ -25,8 +27,8 @@ const Footer = () => {
           </span>
         </p>
       </div>
-      <div className="w-full flex items-center justify-center">
-        <p className="text-[11px] text-white/40">
+      <div className="w-full flex items-center justify-center xl:justify-end">
+        <p className="text-[11px] text-white/40 xl:mr-12">
           <span>
             Starlink is a division of SpaceX. Visit us at{" "}
             <a href="" className="font-bold text-white">

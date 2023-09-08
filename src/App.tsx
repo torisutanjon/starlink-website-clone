@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LandingPage } from "./pages";
-import { NavContextProvider } from "./hooks";
+import { NavContextProvider } from "./contexts";
 
 function App() {
   return (

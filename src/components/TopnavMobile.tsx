@@ -1,16 +1,16 @@
 import { ico, hamburger } from "../assets";
-import { useContext } from "react";
-import { NavContext } from "../hooks/NavContext";
+import { useNavContext } from "../hooks";
+
 const TopNavMobile = () => {
-  const { setIsOpen } = useContext(NavContext);
+  const { setIsMobileOpen } = useNavContext();
   return (
     <>
-      <div className="absolute top-8 h-14 w-full flex flex-row items-center justify-center z-[1]">
+      <div className="absolute top-8 h-14 w-full flex flex-row items-center justify-center z-[1] lg:hidden">
         <img src={ico} alt="" className="h-14 w-14 ml-4" />
         <button
           type="button"
           className="absolute right-6 h-7 w-9"
-          onClick={() => setIsOpen(true)}
+          onClick={() => setIsMobileOpen(true)}
         >
           <img
             src={hamburger}

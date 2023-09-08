@@ -1,6 +1,5 @@
 import { ico, close } from "../assets";
-import { useContext } from "react";
-import { NavContext } from "../hooks/NavContext";
+import { useNavContext } from "../hooks";
 
 const SmallContainer = ({ title, path }: { title: string; path: string }) => {
   return (
@@ -22,16 +21,16 @@ const BigContainer = ({ title, path }: { title: string; path: string }) => {
 };
 
 const TopNavHidden = () => {
-  const { isOpen, setIsOpen } = useContext(NavContext);
+  const { isMobileOpen, setIsMobileOpen } = useNavContext();
   return (
     <div
       className={`fixed top-0 right-0 h-screen flex items-center justify-center bg-black z-[2] duration-500 ${
-        isOpen ? "w-full" : "w-0"
+        isMobileOpen ? "w-full" : "w-0"
       }`}
     >
       <div
         className={`relative h-full w-5/6 py-5 overflow-y-auto no-scrollbar ${
-          isOpen ? "" : "hidden"
+          isMobileOpen ? "" : "hidden"
         } `}
       >
         <div className="relative h-12 w-full mt-4 flex flex-row items-center justify-center">
@@ -40,7 +39,7 @@ const TopNavHidden = () => {
             type="button"
             className="absolute right-4 h-4 w-4"
             onClick={() => {
-              setIsOpen(false);
+              setIsMobileOpen(false);
             }}
           >
             <img src={close} alt="" className="relative h-full w-full" />

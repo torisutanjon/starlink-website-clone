@@ -1,17 +1,20 @@
 import * as Landings from "../components/landings";
 import { Footer } from "../components";
-import { useMediaQuery } from "react-responsive";
-import { TopNavMobile, TopNavDesktop, TopNavHidden } from "../components";
+import {
+  TopNavMobile,
+  TopNavDesktop,
+  MobileNavHidden,
+  DesktopNavHidden,
+} from "../components";
 
 const LandingPage = () => {
-  const isDesktop = useMediaQuery({
-    query: "min-wdith:1224px",
-  });
   return (
     <>
       <div className="absolute top-0 left-0 h-full w-screen overflow-auto">
-        {isDesktop ? <TopNavDesktop /> : <TopNavMobile />}
-        <TopNavHidden />
+        <TopNavDesktop indexProp={0} />
+        <TopNavMobile />
+        <MobileNavHidden />
+        <DesktopNavHidden />
         <Landings.LandingOne />
         <Landings.LandingTwo />
         <Landings.LandingThree />

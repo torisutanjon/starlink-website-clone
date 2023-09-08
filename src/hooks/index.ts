@@ -1,1 +1,1 @@
-export { default as NavContextProvider } from "./NavContext";
+export { default as useNavContext } from "./useNavContext";
