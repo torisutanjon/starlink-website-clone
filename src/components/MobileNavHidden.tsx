@@ -1,4 +1,4 @@
-import { ico, close } from "../assets";
+import { ico, close, globe } from "../assets";
 import { useNavContext } from "../hooks";
 
 const SmallContainer = ({ title, path }: { title: string; path: string }) => {
@@ -10,12 +10,21 @@ const SmallContainer = ({ title, path }: { title: string; path: string }) => {
     </div>
   );
 };
-const BigContainer = ({ title, path }: { title: string; path: string }) => {
+const BigContainer = ({
+  title,
+  path,
+  image,
+}: {
+  title: string;
+  path: string;
+  image?: string;
+}) => {
   return (
-    <div className="h-14 w-full flex items-center justify-start">
+    <div className="h-14 w-full flex items-center justify-start border-b-[1px] border-b-white/20">
       <a href={path} className="text-[12px] font-bold text-white">
         {title}
       </a>
+      {image && <img src={image} alt="" className="relative ml-2 h-6 w-6" />}
     </div>
   );
 };
@@ -24,7 +33,7 @@ const TopNavHidden = () => {
   const { isMobileOpen, setIsMobileOpen } = useNavContext();
   return (
     <div
-      className={`fixed top-0 right-0 h-screen flex items-center justify-center bg-black z-[2] duration-500 ${
+      className={`fixed top-0 right-0 h-screen flex items-center justify-center bg-black z-[2] duration-500 lg:hidden ${
         isMobileOpen ? "w-full" : "w-0"
       }`}
     >
@@ -58,7 +67,7 @@ const TopNavHidden = () => {
         <BigContainer title="AVAILABILITY SHOP" path="#" />
         <BigContainer title="RESOURCES" path="#" />
         <BigContainer title="SPECIFICATION" path="#" />
-        <BigContainer title="US" path="#" />
+        <BigContainer title="US" image={globe} path="#" />
         <BigContainer title="SIGN IN" path="#" />
       </div>
     </div>

@@ -1,12 +1,22 @@
 import { useNavContext } from "../hooks";
 import { close } from "../assets";
+import { globe } from "../assets";
 
-const NavComponent = ({ title, path }: { title: string; path: string }) => {
+const NavComponent = ({
+  title,
+  path,
+  image,
+}: {
+  title: string;
+  path: string;
+  image?: string;
+}) => {
   return (
-    <div className="relative h-16 w-3/4 mx-auto flex items-center justify-start border-b-[1px] border-b-white/20">
+    <div className="relative h-16 w-3/4 mx-auto flex flex-row items-center justify-start border-b-[1px] border-b-white/20">
       <a href={path} className="text-white font-bold text-sm">
         {title}
       </a>
+      {image && <img src={image} alt="" className="relative ml-2 h-6 w-6" />}
     </div>
   );
 };
@@ -29,6 +39,7 @@ const DesktopNavHidden = () => {
     },
     {
       title: "US",
+      img: globe,
       path: "#",
     },
     {
@@ -38,7 +49,7 @@ const DesktopNavHidden = () => {
   ];
   return (
     <div
-      className={`fixed top-0 left-0 h-screen w-screen duration-500 ${
+      className={`fixed top-0 left-0 h-screen w-screen duration-500 hidden lg:block ${
         isDesktopOpen ? "z-10 bg-white/20" : "-z-10"
       }`}
     >
@@ -60,7 +71,14 @@ const DesktopNavHidden = () => {
             <img src={close} alt="" className="relative h-full w-full" />
           </button>
           {navList.map((nav, key) => {
-            return <NavComponent key={key} title={nav.title} path={nav.path} />;
+            return (
+              <NavComponent
+                key={key}
+                title={nav.title}
+                path={nav.path}
+                image={nav.img}
+              />
+            );
           })}
         </div>
       </div>

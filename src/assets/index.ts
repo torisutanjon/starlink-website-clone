@@ -1,6 +1,7 @@
 export { default as ico } from "./ico.png";
 export { default as hamburger } from "./hamburger.png";
 export { default as close } from "./close.png";
+export { default as globe } from "./globe.png";
 
 export { default as landingMobilebg2 } from "./landing_mobile_bg2.jpg";
 export { default as landingDesktopbg2 } from "./landing_desktop_bg2.jpg";
