@@ -3,7 +3,7 @@ const Footer = () => {
     <footer className="relative w-full flex flex-col items-center justify-center py-4 bg-black mt-24 xl:flex-row">
       <div className="w-full flex items-center justify-center xl:justify-start">
         <p className="text-[12px] text-white/40 xl:ml-12">
-          Starlink &copy; 2023
+          Tristan John P. Girao &copy; 2023
         </p>
       </div>
       <div className=" w-full flex items-center justify-center px-12">
